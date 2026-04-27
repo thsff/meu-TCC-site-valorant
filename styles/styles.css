@@ -1,0 +1,61 @@
+body{
+    background-color: #111827;
+}
+
+
+.logoSITE{
+    width: 71px;
+}
+
+.tituloS{
+    position: relative;
+    top: -75px;
+    left: 75px;
+}
+
+.menu{
+    position: relative;
+    top: -115px;
+    left: 900px;
+}
+
+.User{
+    position: absolute;
+    top: 30px;
+    right: 500px;
+}
+
+.linha1{
+    margin-top: -75px;
+}
+
+.textoSkins, .textoEncontre{
+    padding: 10px;
+}
+
+.textoEncontre{
+    margin-top: -25px;
+}
+
+.botaoVer{
+    border: none;
+    padding: 10px;
+    width: 150px;
+    border-radius: 12px;
+}
+
+.imgJet{
+    display: block;
+    margin-left: auto;
+    margin-top: -165px;
+    margin-right: 80px;
+}
+
+.linha2{
+    margin-top: -1px;
+}
+
+.skinsDisponiveis{
+    text-align: center;
+}
+

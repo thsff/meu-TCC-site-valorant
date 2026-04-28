@@ -1,5 +1,13 @@
+:root{
+    --cor-primaria: #111827;
+    --cor-segundaria: #FF4655;
+    --cor-terciaria: #ffffff;
+
+}
+
 body{
     background-color: #111827;
+    color: #ffffff;
 }
 
 
@@ -42,6 +50,8 @@ body{
     padding: 10px;
     width: 150px;
     border-radius: 12px;
+    background-color: var(--cor-segundaria)
+
 }
 
 .imgJet{
@@ -52,10 +62,25 @@ body{
 }
 
 .linha2{
-    margin-top: -1px;
+    margin-top: 2px;
+  
 }
 
 .skinsDisponiveis{
     text-align: center;
 }
 
+.titulo_destaque, .titulo__destaque{
+    color: var(--cor-segundaria)
+}
+
+.inicio, .skins, .sobre{
+    text-decoration: none;
+    color: var(--cor-terciaria);
+}
+
+.skinsLoja{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}

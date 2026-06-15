@@ -3,58 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/styles.css">
     <title>Valorant Store</title>
 </head>
 <body>
-    <header>
+    <header class="cabecalho">
+        <div class="LOGO">
         <img class="logoSITE" src="./imagens/logo vava.webp" alt="logoSITE">
-
-        <h2 class="tituloS"><strong class="titulo_destaque">VALORANT</strong> STORE</h2>
+        <h2 class="textoLOGO">
+            VALORANT<span>STORE</span>
+        </h2>
+        </div>
 
         <nav class="menu">
-        <a class="inicio" href="#">INICIO</a>
-        <a class="skins" href="#">SKINS</a>
-        <a class="sobre" href="#">SOBRE</a>
-
+            <ul class="menuUL">
+                <li><a href="inicio">INICIO</a></li>
+                <li><a href="skins">SKINS</a></li>
+                <li><a href="sobre">SOBRE</a></li>
+        
+            </ul>
         </nav>
-        <img class="User" src="./imagens/img_User.png" alt="logoUSER">
-        <hr class="linha1">
 
+        <div class="menuIMG">
+            <img src="./imagens/ICONE favoritos 1.png" alt="iconeFavoritos">
+
+            <img class="carrinho" src="./imagens/ICONE carrinho de compras.png" alt="">
+        </div>
     </header>
 
-    <main>
-        <div>
-
-        <h1 class="textoSkins">COMPRE AS MELHORES SKINS DE <strong class="titulo__destaque">VALORANT!</strong></h1>
-
-        <P class="textoEncontre">Encontre skins incriveis e leve seu jogo paara o alto nivel!</P>
-
-        <button class="botaoVer">Ver skins</button>
-
-        <img class="imgJet" src="./imagens/imgJETT.png" alt="imgJet">
-
-        <hr class="linha2">
-
+         <section class="hero" id="home">
+        <div class="hero-conteudo">
+            <h1>COMPRE AS MELHORES SKINS DE <br> <span>VALORANT!</span></h1>
+            <p>Encontre skins incriveis e leve seu jogo para o alto nivel!</p>
+             <a href="#" class="botao">Ver Skins</a>
         </div>
+    </section>
 
-        <h1 class="skinsDisponiveis">SKINS DISPONIVEIS</h1>
-        
-        <div class="skinsLoja">
-        <img class="skin1" src="./imagens/SKIN 1.png" alt="preludio">
+      
+    <!-- SKINS-->
+    <section class="secao-skins">
+  <h2 class="titulo-secao">SKINS DISPONÍVEIS</h2>
 
-        <img class="skin2" src="./imagens/SKIN 3.png" alt="opLugubre">
+  <div class="lista-cards">
+    <!-- Card 1 -->
+    <div class="card-arma">
+      <div class="foto-fundo">
+        <img src="./imagens/preludio do caos 1.png" alt="Vandal" class="imagem-arma">
+      </div>
+      <p class="nome-arma">Vandal Preludio do caos</p>
+      <p class="preco-arma">R$ 79,90</p>
+      <button class="botao-comprar">Comprar</button>
+    </div>
 
-        <img class="skin3" src="./imagens/SKIN 5.png" alt="soberania">
+    <!-- Card 2 -->
+    <div class="card-arma">
+      <div class="foto-fundo">
+        <img src="./imagens/OPlugube IMG.png" alt="Operator" class="imagem-arma">
+      </div>
+      <p class="nome-arma">Operator Lugubre</p>
+      <p class="preco-arma">R$ 89,90</p>
+      <button class="botao-comprar">Comprar</button>
+    </div>
 
-        <img class="skin4" src="./imagens/SKIN 7.png" alt="vandalChampions">
+    <!-- Card 3 -->
+    <div class="card-arma">
+      <div class="foto-fundo">
+        <img src="./imagens/VANDALCHAMPIONS 1.png" alt="Vandal" class="imagem-arma">
+      </div>
+      <p class="nome-arma">Vandal Champions 2021</p>
+      <p class="preco-arma">R$ 249,90</p>
+      <button class="botao-comprar">Comprar</button>
+    </div>
 
-        </div>
+    <!-- Card 4 -->
+    <div class="card-arma">
+      <div class="foto-fundo">
+        <img src="./imagens/GHOST SOBERANIA 1.png" alt="Ghost" class="imagem-arma">
+      </div>
+      <p class="nome-arma">Ghost Soberania</p>
+      <p class="preco-arma">R$ 59,90</p>
+      <button class="botao-comprar">Comprar</button>
+    </div>
+  </div>
+</section>
 
-
-
-
-    </main>
+<!-- RODAPÉ (FOOTER) -->
+<footer class="rodape">
+  <div class="conteudo-rodape">
     
+    <!-- Lado Esquerdo: Logo do Valorant -->
+    <div class="rodape-logo">
+      <img src="./imagens/logo vava.webp" alt="Logo Valorant" class="logo-img">
+      <span class="logo-texto">VALORANT</span>
+    </div>
+
+    <!-- Links Rápidos -->
+    <div class="rodape-coluna">
+      <h3>LINKS RÁPIDOS</h3>
+      <a href="#">Skins</a>
+      <a href="#">Sobre</a>
+      <a href="#">Suporte</a>
+    </div>
+
+    <!-- Ajuda -->
+    <div class="rodape-coluna">
+      <h3>AJUDA</h3>
+      <a href="#">Politica de reembolso</a>
+      <a href="#">Termos de uso</a>
+    </div>
+
+  </div>
+</footer>
+
+
+     
 </body>
 </html>

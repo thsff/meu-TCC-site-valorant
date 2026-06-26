@@ -59,18 +59,13 @@ body{
 }
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
 
-/* 2. CONFIGURA O SITE PARA USAR ELA */
+
 body, html {
   margin: 0;
   padding: 0;
-  
-  /* MUDOU AQUI: Agora o fundo preto vai descer junto com o resto do site */
   min-height: 100%; 
-  
   background-color: #0b141d;
   font-family: 'Poppins', sans-serif; 
-  
-  /* MUDOU AQUI: Libera a rolagem para baixo e trava para os lados */
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -94,10 +89,10 @@ body, html {
 h1 {
     white-space: nowrap;
     color: #ffffff;
-    font-size: 36px; /* <-- Diminuímos aqui para ficar delicado e proporcional */
-    font-weight: 800; /* Deixa o peso da Poppins bem marcado */
+    font-size: 36px; 
+    font-weight: 800; 
     margin: 0;
-    line-height: 1.2; /* Dá um respiro saudável entre as linhas */
+    line-height: 1.2;
     letter-spacing: 0.5px;
 }
 
@@ -127,10 +122,9 @@ h1 span {
     transform: scale(1.05);
 }
  /* SKINS DISPONIVEISSSS ! ! ! ! ! !! ! ! !! ! */
-/* --- CONFIGURAÇÕES DA SEÇÃO DE SKINS --- */
 .secao-skins {
-  background-color: #0b141d; /* Mesmo fundo escuro do site */
-  padding: 60px 20px 100px 20px; /* Espaço interno nas bordas */
+  background-color: #0b141d; 
+  padding: 60px 20px 100px 20px; 
 }
 
 .titulo-secao {
@@ -142,15 +136,15 @@ h1 span {
   letter-spacing: 1px;
 }
 
-/* Alinha os 4 cards um do lado do outro certinho */
+
 .lista-cards {
   display: flex;
   justify-content: center;
   gap: 35px;
-  flex-wrap: wrap; /* Se a tela encolher, eles vão para baixo sem quebrar */
+  flex-wrap: wrap; 
 }
 
-/* O card que segura os textos e a arma */
+
 .card-arma {
   display: flex;
   flex-direction: column;
@@ -158,7 +152,7 @@ h1 span {
   width: 230px;
 }
 
-/* O quadrado cinza/azul onde a arma fica dentro */
+
 .foto-fundo {
   background-color: #17222e;
   width: 100%;
@@ -186,12 +180,12 @@ h1 span {
 }
 
 .preco-arma {
-  color: #8c97a4; /* Cinza claro idêntico ao print */
+  color: #8c97a4; 
   font-size: 14px;
   margin: 0 0 18px 0;
 }
 
-/* Botão vermelho bem arredondado */
+
 .botao-comprar {
   background-color: #ff4655;
   color: #ffffff;
@@ -200,7 +194,7 @@ h1 span {
   padding: 13px 0;
   font-weight: 700;
   font-size: 14px;
-  border-radius: 25px; /* Deixa o botão redondo igual na imagem */
+  border-radius: 25px; 
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -210,23 +204,23 @@ h1 span {
 }
 
 
-/* --- CONFIGURAÇÕES DO FOOTER --- */
+/* --- FOOTER --- */
 .rodape {
-  background-color: #111a23; /* Fundo ligeiramente mais claro que o do site */
+  background-color: #111a23; 
   padding: 50px 80px;
   border-top: 1px solid #ffffff0a;
 }
 
-/* Organiza as 3 colunas do rodapé lado a lado */
+
 .conteudo-rodape {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-  gap: 120px; /* Dá uma distância bonita entre as colunas */
+  gap: 120px; 
 }
 
-/* Coluna do Logo */
+
 .rodape-logo {
   display: flex;
   align-items: center;
@@ -244,7 +238,7 @@ h1 span {
   letter-spacing: 1px;
 }
 
-/* Colunas de links e textos */
+
 .rodape-coluna {
   display: flex;
   flex-direction: column;
@@ -260,7 +254,7 @@ h1 span {
 }
 
 .rodape-coluna a {
-  color: #ffffff;
+  color: #9aa4af;
   text-decoration: none;
   font-size: 15px;
   font-weight: 400;
@@ -268,7 +262,7 @@ h1 span {
 }
 
 .rodape-coluna a:hover {
-  color: #ff4655; /* Fica vermelho se passar o mouse por cima */
+  color: #fff; 
 }
 
 

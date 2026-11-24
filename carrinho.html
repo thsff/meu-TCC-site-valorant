@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/carrinho.css">
+    <title>Carrinho</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="LOGO">
+        <img class="logoSITE" src="./imagens/logo vava.webp" alt="logoSITE">
+        <h2 class="textoLOGO">
+            VALORANT<span>STORE</span>
+        </h2>
+        </div>
+
+        <nav class="menu">
+            <ul class="menuUL">
+                <li><a href="inicio">INICIO</a></li>
+                <li><a href="skins">SKINS</a></li>
+                <li><a href="sobre.html">SOBRE</a></li>
+        
+            </ul>
+        </nav>
+
+        <div class="menuIMG">
+            <img src="./imagens/ICONE favoritos 1.png" alt="iconeFavoritos">
+
+            <img class="carrinho" src="./imagens/ICONE carrinho de compras.png" alt="">
+        </div>
+    </header>
+   
+        <div class="conteudo-principal">
+        
+        <div class="lado-esquerdo">
+            
+            <div class="topo-carrinho">
+                <img class="icone-carrinho" src="#" alt="">
+                <div class="texto-topo">
+                    <h1>SEU <span class="destaque-vermelho">CARRINHO</span></h1>
+                    <p>Revise seus itens antes de finalizar a compra.</p>
+                </div>
+            </div>
+
+            <div class="lista-de-skins">
+                </div>
+
+            <button class="botao-voltar" onclick="window.location.href='index.html#skins'">
+                &lt; CONTINUAR COMPRANDO
+            </button>
+        </div>
+
+        <div class="lado-direito">
+            <div class="caixa-resumo">
+                <h2>RESUMO DO PEDIDO</h2>
+                <p class="quantidade-itens">0 ITENS</p> <hr class="linha-divisoria">
+
+                <div class="linha-total">
+                    <span>TOTAL</span>
+                    <span class="preco-total">0,00R$</span> </div>
+
+                <button class="botao-finalizar">
+                     FINALIZAR COMPRA
+                </button>
+                
+                <p class="texto-seguro">✓ Compra 100% segura</p>
+            </div>
+        </div>
+
+    </div>
+
+
+        <footer class="rodape-geral">
+  <div class="caixa-mae">
+    
+    <div class="bloquinho">
+      <span class="logo-fake">VALORANT</span>
+    </div>
+
+    <div class="bloquinho">
+      <p class="titulo-gordinho">LINKS RÁPIDOS</p>
+      <a href="#" class="link-clicavel">Skins</a>
+      <a href="#" class="link-clicavel">Sobre</a>
+      <a href="#" class="link-clicavel">Suporte</a>
+    </div>
+
+    <div class="bloquinho">
+      <p class="titulo-gordinho">AJUDA</p>
+      <a href="#" class="link-clicavel">Política de reembolso</a>
+      <a href="#" class="link-clicavel">Termos de uso</a>
+    </div>
+
+    <div class="bloquinho">
+      <p class="titulo-gordinho">FORMAS DE PAGAMENTO</p>
+      <div class="caixa-das-fotos">
+        <img src="./imagens/pix-bc-logo-0 1.png" alt="">
+        <img src="./imagens/Mastercard-logo 1.png" alt="">
+      </div>
+    </div>
+
+  </div>
+</footer>
+    
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carrinho = JSON.parse(localStorage.getItem('carrinhoValorant')) || [];
+    const containerLista = document.querySelector('.lista-de-skins');
+    const elQtd = document.querySelector('.quantidade-itens');
+    const elTotal = document.querySelector('.preco-total');
+
+    let total = 0;
+
+    if (containerLista) {
+      containerLista.innerHTML = '';
+
+      carrinho.forEach((item, index) => {
+        const precoLimpo = String(item.preco || '0')
+          .replace(/R\$/gi, '')
+          .replace(/\s+/g, '')
+          .replace(/\./g, '')
+          .replace(',', '.');
+        const precoNumero = parseFloat(precoLimpo) || 0;
+        total += precoNumero;
+
+        const linha = document.createElement('div');
+        linha.style.display = 'flex';
+        linha.style.alignItems = 'center';
+        linha.style.justifyContent = 'space-between';
+        linha.style.gap = '16px';
+        linha.style.padding = '16px';
+        linha.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+        linha.style.color = '#ffffff';
+
+        linha.innerHTML = `
+          <div style="display:flex; align-items:center; gap:16px;">
+            <img src="${item.imagem}" alt="${item.nome}" style="width:90px; height:auto; object-fit:contain;">
+            <div>
+              <p style="font-weight:bold; font-size:16px; margin-bottom:4px;">${item.nome}</p>
+              <p style="color:#ff4655; font-weight:bold;">${item.preco}</p>
+            </div>
+          </div>
+          <button type="button" data-remover="${index}" style="background:#ff4655; color:#fff; border:none; border-radius:6px; padding:8px 14px; cursor:pointer; font-weight:bold;">
+            Remover
+          </button>
+        `;
+
+        containerLista.appendChild(linha);
+      });
+
+      containerLista.addEventListener('click', (evento) => {
+        const btnRemover = evento.target.closest('[data-remover]');
+        if (!btnRemover) return;
+
+        const idx = Number(btnRemover.getAttribute('data-remover'));
+        carrinho.splice(idx, 1);
+        localStorage.setItem('carrinhoValorant', JSON.stringify(carrinho));
+        window.location.reload();
+      });
+    }
+
+    if (elQtd) {
+      elQtd.textContent = `${carrinho.length} ${carrinho.length === 1 ? 'ITEM' : 'ITENS'}`;
+    }
+
+    if (elTotal) {
+      elTotal.textContent = `${total.toFixed(2).replace('.', ',')}R$`;
+    }
+  });
+</script>
+
+</body>
+</html>
